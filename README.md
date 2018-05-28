@@ -10,6 +10,10 @@
 
 A Google Chrome extension for a developer console outside Developer Tools
 
+You can install it from the [Chrome Web Store](https://chrome.google.com/webstore/detail/egnpebbaedhmkhdoachibnpiplmkjoke).
+
+[![Screenshot](images/screenshot.png)](https://chrome.google.com/webstore/detail/egnpebbaedhmkhdoachibnpiplmkjoke)
+
 ## Features
 
 * A developer console outside of Chrome Developer Tools
