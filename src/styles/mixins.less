@@ -1,0 +1,110 @@
+
+.background-gradient-twoColor (@topColor: #FFFFFF, @bottomColor: #000000) {
+    background-image: -ms-linear-gradient(top, @topColor 0%, @bottomColor 100%); /* Mozilla Firefox */
+    background-image: -moz-linear-gradient(top, @topColor 0%, @bottomColor 100%); /* Opera */
+    background-image: -o-linear-gradient(top, @topColor 0%, @bottomColor 100%); /* Webkit (Safari/Chrome 10) */
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, @topColor), color-stop(1, @bottomColor)); /* Webkit (Chrome 11+) */
+    background-image: -webkit-linear-gradient(top, @topColor 0%, @bottomColor 100%); /* Proposed W3C Markup */
+    background-image: linear-gradient(top, @topColor 0%, @bottomColor 100%); /* For rest of the Internet Explorer Versions */
+    filter: ~"progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr="@topColor~", endColorstr="@bottomColor~")"; /*For IE7-8-9*/
+}
+
+.background-gradient-transparent (@topColor: #FFFFFF, @bottomColor: #000000) {
+    background-image: -ms-linear-gradient(top, @topColor 0%, @bottomColor 100%); /* Mozilla Firefox */
+    background-image: -moz-linear-gradient(top, @topColor 0%, @bottomColor 100%); /* Opera */
+    background-image: -o-linear-gradient(top, @topColor 0%, @bottomColor 100%); /* Webkit (Safari/Chrome 10) */
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, @topColor), color-stop(1, @bottomColor)); /* Webkit (Chrome 11+) */
+    background-image: -webkit-linear-gradient(top, @topColor 0%, @bottomColor 100%); /* Proposed W3C Markup */
+    background-image: linear-gradient(top, @topColor 0%, @bottomColor 100%); /* For rest of the Internet Explorer Versions */
+    filter: ~"progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#00000000, endColorstr=#00000000)"; /*For IE7-8-9*/
+}
+
+.background-gradient-transparent-normal (@bottomColor: #000000) {
+    background-image: -ms-linear-gradient(top, transparent 0%, @bottomColor 100%); /* Mozilla Firefox */
+    background-image: -moz-linear-gradient(top, transparent 0%, @bottomColor 100%); /* Opera */
+    background-image: -o-linear-gradient(top, transparent 0%, @bottomColor 100%); /* Webkit (Safari/Chrome 10) */
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, transparent), color-stop(1, @bottomColor)); /* Webkit (Chrome 11+) */
+    background-image: -webkit-linear-gradient(top, transparent 0%, @bottomColor 100%); /* Proposed W3C Markup */
+    background-image: linear-gradient(top, transparent 0%, @bottomColor 100%); /* For rest of the Internet Explorer Versions */
+    filter: ~"progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#00000000, endColorstr="@bottomColor~")"; /*For IE7-8-9*/
+}
+
+.opacity (@opacity: 1) {
+    opacity: @opacity;
+    filter:alpha(opacity=@opacity);
+}
+
+.filter (@prop: none) {
+    -webkit-filter: @prop;
+    -moz-filter: @prop;
+    -ms-filter: @prop;
+    -o-filter: @prop;
+    filter: @prop;
+}
+
+.transition (@seconds: 1s) {
+    -moz-transition: @seconds;
+    -webkit-transition: @seconds;
+    -o-transition: @seconds;
+    transition: @seconds;
+}
+
+.perspective (@perspective: 500) {
+    -webkit-perspective: @perspective;
+    perspective: @perspective;
+}
+
+.round-borders (@borderRadius: 5px) {
+    -moz-border-radius: @borderRadius; 
+    -webkit-border-radius: @borderRadius;
+    border-radius: @borderRadius;
+}
+
+.box-sizing (@sizing: border-box) {
+    -moz-box-sizing: @sizing;
+    box-sizing: @sizing;
+}
+
+.multiple-columns (@count: 2) {
+    -webkit-column-count: @count;
+    -moz-column-count: @count;
+    column-count: @count;
+}
+
+.transformStyle (@theStyle: preserve-3d) {
+    -webkit-transform-style: @theStyle;
+    -moz-transform-style: @theStyle;
+    transform-style: @theStyle;
+}
+
+.translateZ (@pixels: 50px) {
+    -webkit-transform: translateZ(@pixels);
+    -moz-transform: translateZ(@pixels);
+    transform: translateZ(@pixels);
+}
+
+.translateX (@pixels: 50px) {
+    -webkit-transform: translateX(@pixels);
+    -moz-transform: translateX(@pixels);
+    transform: translateX(@pixels);
+}
+
+.rotate (@angle: 0deg) {
+	-webkit-transform: rotate(@angle);
+	-moz-transform: rotate(@angle);
+	-ms-transform: rotate(@angle);
+	transform: rotate(@angle);
+}
+
+.transform (@transform: rotate(0deg)) {
+	-webkit-transform: @transform;
+	-moz-transform: @transform;
+	-ms-transform: @transform;
+	transform: @transform;
+}
+
+.scaleAndTranslate(@scale: 1, @tx: 0px, @ty: 0px, @tz: 0px) {
+    -webkit-transform: translate3d(@tx, @ty, @tz) scale3d(@scale, @scale, 1);
+    -moz-transform: translate3d(@tx, @ty, @tz) scale3d(@scale, @scale, 1);
+    transform: translate3d(@tx, @ty, @tz) scale3d(@scale, @scale, 1);
+}

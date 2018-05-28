@@ -1,0 +1,19 @@
+{
+  "manifest_version": 2,
+  "name": "Chrome Quick Console",
+  "short_name": "Chrome Quick Console",
+  "version": "0.9.0",
+  "description": "A Google Chrome extension for a developer console outside Developer Tools",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "browser_action": {
+    "default_popup": "index.html"
+  },
+  "author": "Mohammed Ismail Ansari <team.terminal@gmail.com>",
+  "permissions": [
+    "activeTab"
+  ]
+}

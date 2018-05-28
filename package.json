@@ -1,0 +1,53 @@
+{
+  "name": "chrome-quick-console",
+  "version": "0.9.0",
+  "description": "A Google Chrome extension for a developer console outside Developer Tools",
+  "main": "build/index.html",
+  "scripts": {
+    "debug": "webpack --config webpack.dev.js",
+    "develop": "webpack --config webpack.dev.js --watch",
+    "live": "webpack-dev-server --config webpack.live.js --open",
+    "build": "webpack --config webpack.prod.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:myTerminal/chrome-quick-console.git"
+  },
+  "bugs": {
+    "url": "https://github.com/myTerminal/chrome-quick-console/issues"
+  },
+  "homepage": "https://github.com/myTerminal/chrome-quick-console#readme",
+  "keywords": [
+    "chrome-extension"
+  ],
+  "author": "Mohammed Ismail Ansari <team.terminal@gmail.com>",
+  "license": "GPL-3.0",
+  "dependencies": {
+  },
+  "devDependencies": {
+    "babel-core": "6.26.0",
+    "babel-loader": "7.1.4",
+    "babel-preset-env": "1.6.1",
+    "clean-webpack-plugin": "0.1.19",
+    "copy-webpack-plugin": "4.5.1",
+    "css-loader": "0.28.11",
+    "eslint": "4.19.1",
+    "eslint-config-airbnb": "16.1.0",
+    "eslint-loader": "2.0.0",
+    "eslint-plugin-import": "2.11.0",
+    "eslint-plugin-jsx-a11y": "6.0.3",
+    "eslint-plugin-react": "7.7.0",
+    "extract-text-webpack-plugin": "4.0.0-alpha.0",
+    "file-loader": "1.1.11",
+    "html-loader": "0.5.5",
+    "html-webpack-plugin": "3.0.6",
+    "less": "3.0.1",
+    "less-loader": "4.1.0",
+    "style-loader": "0.20.3",
+    "uglifyjs-webpack-plugin": "1.2.4",
+    "webpack": "4.1.1",
+    "webpack-cli": "2.0.12",
+    "webpack-dev-server": "3.1.1",
+    "webpack-merge": "4.1.2"
+  }
+}
