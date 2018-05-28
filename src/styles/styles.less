@@ -11,7 +11,7 @@
     src: url('../fonts/RobotoMono-Bold.ttf');
 }
 
-@color-primary: #0f0;
+@color-primary: #0d0;
 @color-mid: #040;
 @color-secondary: #020;
 
@@ -36,14 +36,26 @@ html {
             text-align: center;
             background-color: @color-primary;
             color: @color-secondary;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 1.2em;
         }
 
         #console-log {
             height: 420px;
             background-color: @color-secondary;
+            overflow-y: scroll;
 
             #log {
 
+                .command {
+                    padding-top: 5px;
+                    .opacity(0.5);
+                }
+
+                .result {
+                    padding: 0 5px;
+                }
             }
         }
 
