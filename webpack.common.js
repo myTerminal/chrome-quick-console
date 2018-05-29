@@ -1,5 +1,7 @@
 /* global require module __dirname */
 
+const packageDetails = require('./package.json');
+
 const sourceDir = 'src';
 const outputDir = 'build';
 
@@ -14,7 +16,12 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const clean = new CleanWebpackPlugin([outputDir]);
 const copy = new CopyWebpackPlugin([
     {
-        from: sourceDir + '/manifest.json'
+        from: sourceDir + '/manifest.json',
+        transform: function (content, path) {
+            return content.toString()
+                .replace(/#version#/g, packageDetails.version)
+                .replace(/#description#/g, packageDetails.description);
+        }
     },
     {
         from: sourceDir + '/icons',
