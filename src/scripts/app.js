@@ -30,6 +30,8 @@ const executeCommand = function (command) {
                     } else {
                         appendResultToLog('null');
                     }
+
+                    setTimeout(makeLogsScrollableMaybe);
                 });
         });
 };
@@ -37,6 +39,14 @@ const executeCommand = function (command) {
 const appendResultToLog = function (result) {
     document.querySelector('#log').innerHTML += `<div class="result">> ${result}</div>`;
     scrollLogToBottom();
+};
+
+const makeLogsScrollableMaybe = function () {
+    const logContainer = document.querySelector('#console-log');
+
+    logContainer.className = logContainer.scrollHeight > logContainer.offsetHeight ?
+        'scrollable' :
+        '';
 };
 
 const scrollLogToBottom = function () {
@@ -117,4 +127,3 @@ const load = function () {
 };
 
 window.addEventListener('load', load);
-

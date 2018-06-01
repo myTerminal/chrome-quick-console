@@ -44,9 +44,13 @@ html {
         #console-log {
             height: 420px;
             background-color: @color-secondary;
-            overflow-y: scroll;
+
+            &.scrollable {
+                overflow-y: scroll;
+            }
 
             #log {
+                word-wrap: break-word;
 
                 .command {
                     padding-top: 5px;

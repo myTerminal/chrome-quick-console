@@ -1,6 +1,6 @@
 {
   "name": "chrome-quick-console",
-  "version": "0.9.0",
+  "version": "0.9.1",
   "description": "A Google Chrome extension for a developer console outside Developer Tools",
   "main": "build/index.html",
   "scripts": {
