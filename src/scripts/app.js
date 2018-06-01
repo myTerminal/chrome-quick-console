@@ -2,7 +2,7 @@
 
 import '../styles/styles.less';
 
-const manifestDetails = require('../manifest.json');
+const packageDetails = require('../../package.json');
 
 let commandIndex = -1;
 
@@ -92,7 +92,7 @@ const loadCommandToInput = function (index) {
 };
 
 const load = function () {
-    document.querySelector('#title').innerText = `${manifestDetails.name} ${manifestDetails.version}`;
+    document.querySelector('#title').innerText = `Chrome Quick Console ${packageDetails.version}`;
 
     document.querySelector('#clear').onclick = clearLog;
 
