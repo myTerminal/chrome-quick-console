@@ -93,12 +93,24 @@ html {
                 line-height: 22px;
                 text-align: center;
                 margin-left: 5px;
+                padding: 0 5px;
                 text-transform: uppercase;
                 border: 1px solid @color-primary;
                 .round-borders(3px);
                 cursor: pointer;
 
-                &:hover {
+                &.left {
+                    float: left;
+                    margin-left: 0;
+                    margin-right: 5px;
+                }
+
+                &.mini {
+                    width: auto;
+                }
+
+                &:hover,
+                &.active {
                     background-color: @color-mid;
                 }
             }
