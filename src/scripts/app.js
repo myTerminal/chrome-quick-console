@@ -67,6 +67,7 @@ const appendCurrentCommandToLog = function () {
 
 const clearLog = function () {
     document.querySelector('#log').innerHTML = '';
+    setTimeout(makeLogsScrollableMaybe);
 };
 
 const loadPreviousCommand = function () {
