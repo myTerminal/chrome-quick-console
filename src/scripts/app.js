@@ -18,13 +18,13 @@ const executeCommand = function (command) {
             active: true,
             lastFocusedWindow: true
         },
-        function (tabs) {
+        tabs => {
             chrome.tabs.executeScript(
                 tabs[0].id,
                 {
                     code: command
                 },
-                function (result) {
+                result => {
                     if (result && result[0]) {
                         appendResultToLog(result[0]);
                     } else {
@@ -34,18 +34,8 @@ const executeCommand = function (command) {
         });
 };
 
-const appendCurrentCommandToLog = function () {
-    const command = document.querySelector('#input').value;
-
-    commandLog.push(command);
-    commandIndex = -1;
-
-    document.querySelector('#log').innerHTML += '<div class="command">' + command + '</div>';
-    document.querySelector('#input').value = '';
-};
-
 const appendResultToLog = function (result) {
-    document.querySelector('#log').innerHTML += '<div class="result">> ' + result + '</div>';
+    document.querySelector('#log').innerHTML += `<div class="result">> ${result}</div>`;
     scrollLogToBottom();
 };
 
@@ -53,6 +43,16 @@ const scrollLogToBottom = function () {
     const logContainer = document.querySelector('#console-log');
 
     logContainer.scrollTop = logContainer.scrollHeight;
+};
+
+const appendCurrentCommandToLog = function () {
+    const command = document.querySelector('#input').value;
+
+    commandLog.push(command);
+    commandIndex = -1;
+
+    document.querySelector('#log').innerHTML += `<div class="command">${command}</div>`;
+    document.querySelector('#input').value = '';
 };
 
 const clearLog = function () {
@@ -84,15 +84,15 @@ const loadCommandToInput = function (index) {
 
     if (commandIndex !== -1) {
         inputBox.value = commandLog[index];
-        setTimeout(function () {
+        setTimeout(() => {
             inputBox.selectionStart = inputBox.value.length;
             inputBox.selectionEnd = inputBox.value.length;
         });
     }
 };
 
-window.addEventListener('load', function () {
-    document.querySelector('#title').innerText = manifestDetails.name + ' ' + manifestDetails.version;
+const load = function () {
+    document.querySelector('#title').innerText = `${manifestDetails.name} ${manifestDetails.version}`;
 
     document.querySelector('#clear').onclick = clearLog;
 
@@ -114,5 +114,7 @@ window.addEventListener('load', function () {
 
         return true;
     };
-});
+};
+
+window.addEventListener('load', load);
 
