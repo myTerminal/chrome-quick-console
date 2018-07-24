@@ -22,8 +22,7 @@
   ],
   "author": "Mohammed Ismail Ansari <team.terminal@gmail.com>",
   "license": "GPL-3.0",
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
     "babel-core": "6.26.0",
     "babel-loader": "7.1.4",
