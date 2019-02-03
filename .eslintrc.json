@@ -1,5 +1,6 @@
 {
   "extends": "airbnb",
+  "parser": "babel-eslint",
   "rules": {
     "linebreak-style": ["off"],
     "eol-last": ["off"],

@@ -11,6 +11,7 @@ const webpack = require('webpack');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const clean = new CleanWebpackPlugin([outputDir]);
@@ -29,6 +30,7 @@ const copy = new CopyWebpackPlugin([
     }
 ]);
 const extractCSS = new ExtractTextPlugin('styles/styles.css');
+const optimizeCSS = new OptimizeCssAssetsPlugin();
 const html = new HtmlWebpackPlugin({
     template: sourceDir + '/index.html'
 });
@@ -42,27 +44,23 @@ module.exports = {
         rules: [
             {
                 test: /\.(woff|woff2|eot|ttf|otf)$/,
-                use: [
-                    {
-                        loader: 'file-loader',
-                        options: {
-                            name: 'fonts/[name].[ext]',
-                            publicPath: '../'
-                        }
+                use: {
+                    loader: 'file-loader',
+                    options: {
+                        name: 'fonts/[name].[ext]',
+                        publicPath: '../'
                     }
-                ]
+                }
             },
             {
                 test: /\.(png|svg|jpg|gif)$/,
-                use: [
-                    {
-                        loader: 'file-loader',
-                        options: {
-                            name: 'images/[name].[ext]',
-                            publicPath: '../'
-                        }
+                use: {
+                    loader: 'file-loader',
+                    options: {
+                        name: 'images/[name].[ext]',
+                        publicPath: '../'
                     }
-                ]
+                }
             },
             {
                 test: /\.(less|css)$/,
@@ -70,10 +68,7 @@ module.exports = {
                     fallback: 'style-loader',
                     use: [
                         {
-                            loader: 'css-loader',
-                            options: {
-                                minimize: true
-                            }
+                            loader: 'css-loader'
                         },
                         {
                             loader: 'less-loader'
@@ -85,18 +80,12 @@ module.exports = {
                 test: /\.js$/,
                 enforce: 'pre',
                 exclude: /node_modules/,
-                use: [
-                    {
-                        loader: 'eslint-loader'
-                    }
-                ]
+                loader: 'eslint-loader'
             },
             {
                 test: /\.js$/,
                 exclude: /(node_modules|bower_components)/,
-                use: {
-                    loader: 'babel-loader'
-                }
+                loader: 'babel-loader'
             },
             {
                 test: /.html$/,
@@ -108,6 +97,7 @@ module.exports = {
         clean,
         copy,
         extractCSS,
+        optimizeCSS,
         html
     ],
     output: {

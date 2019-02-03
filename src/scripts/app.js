@@ -44,9 +44,9 @@ const appendResultToLog = function (result) {
 const makeLogsScrollableMaybe = function () {
     const logContainer = document.querySelector('#console-log');
 
-    logContainer.className = logContainer.scrollHeight > logContainer.offsetHeight ?
-        'scrollable' :
-        '';
+    logContainer.className = logContainer.scrollHeight > logContainer.offsetHeight
+        ? 'scrollable'
+        : '';
 };
 
 const scrollLogToBottom = function () {
