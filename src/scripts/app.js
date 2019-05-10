@@ -8,11 +8,11 @@ let commandIndex = -1;
 
 const commandLog = [];
 
-const executeCurrentCommand = function () {
+const executeCurrentCommand = () => {
     executeCommand(document.querySelector('#input').value);
 };
 
-const executeCommand = function (command) {
+const executeCommand = command => {
     chrome.tabs.query(
         {
             active: true,
@@ -36,12 +36,12 @@ const executeCommand = function (command) {
         });
 };
 
-const appendResultToLog = function (result) {
+const appendResultToLog = result => {
     document.querySelector('#log').innerHTML += `<div class="result">> ${result}</div>`;
     scrollLogToBottom();
 };
 
-const makeLogsScrollableMaybe = function () {
+const makeLogsScrollableMaybe = () => {
     const logContainer = document.querySelector('#console-log');
 
     logContainer.className = logContainer.scrollHeight > logContainer.offsetHeight
@@ -49,13 +49,13 @@ const makeLogsScrollableMaybe = function () {
         : '';
 };
 
-const scrollLogToBottom = function () {
+const scrollLogToBottom = () => {
     const logContainer = document.querySelector('#console-log');
 
     logContainer.scrollTop = logContainer.scrollHeight;
 };
 
-const appendCurrentCommandToLog = function () {
+const appendCurrentCommandToLog = () => {
     const command = document.querySelector('#input').value;
 
     commandLog.push(command);
@@ -65,7 +65,7 @@ const appendCurrentCommandToLog = function () {
     document.querySelector('#input').value = '';
 };
 
-const clearLog = function () {
+const clearLog = () => {
     document.querySelector('#log').innerHTML = '';
     setTimeout(makeLogsScrollableMaybe);
 };
@@ -80,7 +80,7 @@ const loadPreviousCommand = function () {
     loadCommandToInput(commandIndex);
 };
 
-const loadNextCommand = function () {
+const loadNextCommand = () => {
     if (commandIndex === commandLog.length - 1 || commandIndex === -1) {
         commandIndex = 0;
     } else {
@@ -90,7 +90,7 @@ const loadNextCommand = function () {
     loadCommandToInput(commandIndex);
 };
 
-const loadCommandToInput = function (index) {
+const loadCommandToInput = index => {
     const inputBox = document.querySelector('#input');
 
     if (commandIndex !== -1) {
@@ -102,7 +102,7 @@ const loadCommandToInput = function (index) {
     }
 };
 
-const load = function () {
+const start = () => {
     document.querySelector('#title').innerText = `Chrome Quick Console ${packageDetails.version}`;
 
     document.querySelector('#clear').onclick = clearLog;
@@ -127,4 +127,4 @@ const load = function () {
     };
 };
 
-window.addEventListener('load', load);
+window.addEventListener('load', start);
