@@ -1,4 +1,4 @@
-/* global require chrome window document setTimeout */
+/* global require chrome window document setTimeout process */
 
 import '../styles/styles.less';
 
@@ -103,7 +103,7 @@ const loadCommandToInput = index => {
 };
 
 const start = () => {
-    document.querySelector('#title').innerText = `Chrome Quick Console ${packageDetails.version}`;
+    document.querySelector('#title').innerText = `Chrome Quick Console ${packageDetails.version}${process.env.NODE_ENV === 'development' ? ' [DEBUG]' : ''}`;
 
     document.querySelector('#clear').onclick = clearLog;
 
