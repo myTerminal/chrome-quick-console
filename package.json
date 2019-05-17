@@ -33,7 +33,7 @@
     "clean-webpack-plugin": "1.0.1",
     "copy-webpack-plugin": "4.6.0",
     "css-loader": "2.1.0",
-    "effortless-css": "0.9.0",
+    "effortless-css": "0.10.0",
     "eslint": "5.13.0",
     "eslint-config-airbnb": "17.1.0",
     "eslint-loader": "2.1.1",
