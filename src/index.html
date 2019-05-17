@@ -4,7 +4,12 @@
         <meta charset="utf-8" />
     </head>
     <body>
-        <div id="title">Chrome Quick Console</div>
+        <div id="title">
+            <span id="title-text">
+                Chrome Quick Console
+            </span>
+            <a id="source-link" class="fab fa-github" href="https://github.com/myTerminal/chrome-quick-console" target="_blank" title="Source"></a>
+        </div>
         <div id="console-log">
             <div id="log"></div>
         </div>
@@ -12,8 +17,14 @@
             <textarea id="input"></textarea>
         </div>
         <div id="controls">
-            <div class="control" id="clear">Clear</div>
-            <div class="control" id="evaluate">Evaluate</div>
+            <div class="control" id="clear">
+                <i class="fas fa-backspace"></i>
+                Clear
+            </div>
+            <div class="control" id="evaluate">
+                <i class="fas fa-code"></i>
+                Evaluate
+            </div>
             <div class="clearfix"></div>
         </div>
     </body>
