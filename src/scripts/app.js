@@ -103,7 +103,7 @@ const loadCommandToInput = index => {
 };
 
 const start = () => {
-    document.querySelector('#title-text').innerText = `Chrome Quick Console (${packageDetails.version})${process.env.NODE_ENV !== 'development' ? ' [DEBUG]' : ''}`;
+    document.querySelector('#title-text').innerText = `Chrome Quick Console (${packageDetails.version})${process.env.NODE_ENV === 'development' ? ' [DEBUG]' : ''}`;
 
     document.querySelector('#clear').onclick = clearLog;
 
