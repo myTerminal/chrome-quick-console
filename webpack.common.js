@@ -17,28 +17,27 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const clean = new CleanWebpackPlugin([outputDir]);
 const copy = new CopyWebpackPlugin([
     {
-        from: sourceDir + '/manifest.json',
-        transform: function (content, path) {
-            return content.toString()
+        from: `${sourceDir}/manifest.json`,
+        transform: (content, path) =>
+            content.toString()
                 .replace(/#version#/g, packageDetails.version)
-                .replace(/#description#/g, packageDetails.description);
-        }
+                .replace(/#description#/g, packageDetails.description)
     },
     {
-        from: sourceDir + '/icons',
+        from: `${sourceDir}/icons`,
         to: 'icons'
     }
 ]);
 const extractCSS = new ExtractTextPlugin('styles/styles.css');
 const optimizeCSS = new OptimizeCssAssetsPlugin();
 const html = new HtmlWebpackPlugin({
-    template: sourceDir + '/index.html'
+    template: `${sourceDir}/index.html`
 });
 
 module.exports = {
     mode: 'development',
     entry: {
-        app: './' + sourceDir + '/scripts/app.js'
+        app: `./${sourceDir}/scripts/app.js`
     },
     module: {
         rules: [
