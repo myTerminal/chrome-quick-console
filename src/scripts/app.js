@@ -37,7 +37,10 @@ const executeCommand = command => {
 };
 
 const appendResultToLog = result => {
-    document.querySelector('#log').innerHTML += `<div class="result">> ${result}</div>`;
+    let el = document.createElement('div');
+    el.className = 'result';
+    el.innerText = result;
+    document.querySelector('#log').appendChild(el);
     scrollLogToBottom();
 };
 
@@ -60,8 +63,10 @@ const appendCurrentCommandToLog = () => {
 
     commandLog.push(command);
     commandIndex = -1;
-
-    document.querySelector('#log').innerHTML += `<div class="command">${command}</div>`;
+    let el = document.createElement('div');
+    el.className = 'command';
+    el.innerText = command;
+    document.querySelector('#log').appendChild(el);    
     document.querySelector('#input').value = '';
 };
 
