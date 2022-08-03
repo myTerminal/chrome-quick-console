@@ -4,9 +4,6 @@
 [![Code Climate](https://codeclimate.com/github/myTerminal/chrome-quick-console.png)](https://codeclimate.com/github/myTerminal/chrome-quick-console)
 [![js-myterminal-style](https://img.shields.io/badge/code%20style-myterminal-blue.svg)](https://www.npmjs.com/package/eslint-config/myterminal)
 [![Coverage Status](https://img.shields.io/coveralls/myTerminal/chrome-quick-console.svg)](https://coveralls.io/r/myTerminal/chrome-quick-console?branch=master)  
-[![Dependency Status](https://david-dm.org/myTerminal/chrome-quick-console.svg)](https://david-dm.org/myTerminal/chrome-quick-console)
-[![devDependency Status](https://david-dm.org/myTerminal/chrome-quick-console/dev-status.svg)](https://david-dm.org/myTerminal/chrome-quick-console#info=devDependencies)
-[![peer Dependency Status](https://david-dm.org/myTerminal/chrome-quick-console/peer-status.svg)](https://david-dm.org/myTerminal/chrome-quick-console#info=peerDependencies)  
 [![License](https://img.shields.io/badge/LICENSE-GPL%20v3.0-blue.svg)](https://www.gnu.org/licenses/gpl.html)
 
 A Google Chrome extension for a developer console outside Developer Tools
